@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "pulse",
+  "version": "${version}",
+
+  "name": "Pulse",
+  "description": "A QOL mod",
+  "authors": [
+    "Tehcn"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "MIT",
+  "icon": "assets/pulse/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.tehcn.pulse.Pulse"
+    ],
+    "client": [
+      "dev.tehcn.pulse.PulseClient"
+    ]
+  },
+  "mixins": [
+    "pulse.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+
+  }
+}
