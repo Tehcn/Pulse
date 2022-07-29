@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Tehcn/Pulse"
   },
 
   "license": "MIT",
@@ -28,7 +28,6 @@
   "mixins": [
     "pulse.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.14.6",
     "fabric": "*",
@@ -36,6 +35,6 @@
     "java": ">=17"
   },
   "suggests": {
-
+    "nochatreports": "*"
   }
 }

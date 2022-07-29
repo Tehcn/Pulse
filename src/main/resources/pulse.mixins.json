@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "GameMenuScreenMixin",
+    "SplashTextMixin"
   ],
   "injectors": {
     "defaultRequire": 1

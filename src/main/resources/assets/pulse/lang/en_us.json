@@ -1,0 +1,8 @@
+{
+  "message.pulse.commands.help": "help content",
+  "message.pulse.drank_water": "Drank water!",
+  "message.pulse.no_water": "No water nearby!",
+
+  "key.category.pulse.tutorial": "Pulse Keybinds",
+  "key.pulse.drink_water": "Drink Water"
+}
