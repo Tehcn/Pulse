@@ -1,8 +1,26 @@
 {
+  "comment.pulse.0": "Command Output",
   "message.pulse.commands.help": "help content",
-  "message.pulse.drank_water": "Drank water!",
-  "message.pulse.no_water": "No water nearby!",
 
-  "key.category.pulse.tutorial": "Pulse Keybinds",
-  "key.pulse.drink_water": "Drink Water"
+  "comment.pulse.1": "hack toggle messages",
+  "message.pulse.fullbright.enabled": "Enabled Fullbright",
+  "message.pulse.fullbright.disabled": "Disabled Fullbright",
+  "message.pulse.speed.enabled": "Enabled Speed",
+  "message.pulse.speed.disabled": "Disabled Speed",
+  "message.pulse.noitemcooldown.enabled": "Enabled NoItemCooldown",
+  "message.pulse.noitemcooldown.disabled": "Disabled NoItemCooldown",
+  "message.pulse.criticals.enabled": "Enabled Criticals",
+  "message.pulse.criticals.disabled": "Disabled Criticals",
+  "message.pulse.killaura.enabled": "Enabled KillAura",
+  "message.pulse.killaura.disabled": "Disabled KillAura",
+
+  "comment.pulse.2": "hack not able to work for some reason messages",
+  "message.pulse.killaura.noplayers": "There are no players for KillAura to target",
+
+  "key.category.pulse.tutorial": "Pulse",
+  "key.pulse.toggle_fullbright": "Toggle Fullbright",
+  "key.pulse.toggle_noitemcooldown": "Toggle NoItemCooldown",
+  "key.pulse.toggle_speed": "Toggle Speed",
+  "key.pulse.toggle_criticals": "Toggle Criticals",
+  "key.pulse.toggle_killaura": "Toggle KillAura"
 }

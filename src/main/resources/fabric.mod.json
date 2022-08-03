@@ -16,7 +16,7 @@
   "license": "MIT",
   "icon": "assets/pulse/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "main": [
       "dev.tehcn.pulse.Pulse"
@@ -30,11 +30,20 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.6",
-    "fabric": "*",
     "minecraft": "~1.19",
     "java": ">=17"
   },
   "suggests": {
+    "modmenu": ">=1.12.2+build.17",
     "nochatreports": "*"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true,
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/Jeh36gcGRJ"
+      },
+      "badges": [ "library", "deprecated" ]
+    }
   }
 }
