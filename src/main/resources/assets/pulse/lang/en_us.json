@@ -13,6 +13,10 @@
   "message.pulse.criticals.disabled": "Disabled Criticals",
   "message.pulse.killaura.enabled": "Enabled KillAura",
   "message.pulse.killaura.disabled": "Disabled KillAura",
+  "message.pulse.entityesp.enabled": "Enabled EntityESP",
+  "message.pulse.entityesp.disabled": "Disabled EntityESP",
+  "message.pulse.reach.enabled": "Enabled Reach",
+  "message.pulse.reach.disabled": "Disabled Reach",
 
   "comment.pulse.2": "hack not able to work for some reason messages",
   "message.pulse.killaura.noplayers": "There are no players for KillAura to target",
@@ -22,5 +26,7 @@
   "key.pulse.toggle_noitemcooldown": "Toggle NoItemCooldown",
   "key.pulse.toggle_speed": "Toggle Speed",
   "key.pulse.toggle_criticals": "Toggle Criticals",
-  "key.pulse.toggle_killaura": "Toggle KillAura"
+  "key.pulse.toggle_killaura": "Toggle KillAura",
+  "key.pulse.toggle_entityesp": "Toggle EntityESP",
+  "key.pulse.toggle_reach": "Toggle Reach"
 }

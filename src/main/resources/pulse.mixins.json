@@ -8,7 +8,10 @@
   "client": [
     "GameMenuScreenMixin",
     "MinecraftClientMixin",
-    "SplashTextMixin"
+    "SplashTextMixin",
+    "InGameHudMixin",
+    "WorldRendererMixin",
+    "HandSwingC2SPacketMixin"
   ],
   "injectors": {
     "defaultRequire": 1

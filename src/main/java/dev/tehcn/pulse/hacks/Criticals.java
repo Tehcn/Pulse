@@ -2,6 +2,7 @@ package dev.tehcn.pulse.hacks;
 
 import dev.tehcn.pulse.Pulse;
 import dev.tehcn.pulse.event.listeners.LeftClickListener;
+import dev.tehcn.pulse.utils.Chat;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.util.hit.EntityHitResult;
@@ -20,29 +21,19 @@ public class Criticals extends Hack implements LeftClickListener {
 
     @Override
     public void onLeftClick(LeftClickEvent event) {
-        Pulse.LOGGER.info("left clicked");
+        Chat.sendMessage("left clicked");
         jump();
     }
 
     private void jump()
     {
-        Pulse.LOGGER.info("ran criticals");
+        Chat.sendMessage("ran criticals");
 
         assert Pulse.MC.player != null;
-        double posX = Pulse.MC.player.getX();
-        double posY = Pulse.MC.player.getY();
-        double posZ = Pulse.MC.player.getZ();
 
-        sendPos(posX, posY + 0.0625D, posZ, true);
-        sendPos(posX, posY, posZ, false);
-        sendPos(posX, posY + 1.1E-5D, posZ, false);
-        sendPos(posX, posY, posZ, false);
-    }
-
-    private void sendPos(double x, double y, double z, boolean onGround)
-    {
-        assert Pulse.MC.player != null;
-        Pulse.MC.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(x, y, z, onGround));
+        Pulse.MC.player.addVelocity(0, 0.1, 0);
+        Pulse.MC.player.fallDistance = 0.1F;
+        Pulse.MC.player.setOnGround(false);
     }
 
     @Override

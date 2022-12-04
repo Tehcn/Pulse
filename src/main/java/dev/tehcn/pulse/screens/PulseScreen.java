@@ -1,6 +1,7 @@
 package dev.tehcn.pulse.screens;
 
 import dev.tehcn.pulse.Pulse;
+import dev.tehcn.pulse.hacks.Fullbright;
 import dev.tehcn.pulse.screens.utils.PulseScreenButton;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.screen.ScreenTexts;
@@ -16,7 +17,7 @@ public class PulseScreen extends Screen {
     }
 
     Text flyText() {
-        boolean fullbrightEnabled = Pulse.SETTINGS.get("fullbright");
+        boolean fullbrightEnabled = Pulse.SETTINGS.get("Fullbright");
         return Text.literal("Fullbright " + (fullbrightEnabled ? "Enabled" : "Disabled"));
     }
 

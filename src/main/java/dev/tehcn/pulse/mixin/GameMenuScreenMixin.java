@@ -16,7 +16,7 @@ public abstract class GameMenuScreenMixin extends Screen {
 
     @Inject(at = @At("HEAD"), method = "initWidgets()V")
     private void initWidgets(CallbackInfo ci) {
-        this.addDrawableChild(new ButtonWidget(10, 10, 90, 20, Text.literal("Pulse"), (button) -> {
+        this.addDrawableChild(new ButtonWidget(10, 20, 90, 20, Text.literal("Pulse"), (button) -> {
             if (this.client != null) {
                 this.client.setScreen(new PulseScreen(this));
             }

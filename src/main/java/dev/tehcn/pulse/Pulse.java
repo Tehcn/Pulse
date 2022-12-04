@@ -1,6 +1,7 @@
 package dev.tehcn.pulse;
 
 import dev.tehcn.pulse.event.EventManager;
+import dev.tehcn.pulse.event.listeners.LeftClickListener;
 import dev.tehcn.pulse.gui.ModListRenderer;
 import dev.tehcn.pulse.hacks.*;
 import dev.tehcn.pulse.networking.ModMessages;
@@ -47,8 +48,7 @@ public class Pulse implements ModInitializer {
 		loadHacks();
 
 		LOGGER.info("Registering Renderers");
-		ModListRenderer.render(new ArrayList<>(Pulse.INSTANCE.HACKS_MAP.values()));
-
+//		ModListRenderer.render(new ArrayList<>(Pulse.INSTANCE.HACKS_MAP.values()));
 
 		LOGGER.info("Will record encountered players");
 		this.players = new HashMap<>();
@@ -78,11 +78,12 @@ public class Pulse implements ModInitializer {
 		this.HACKS_MAP.put("Speed", this.hacks.speed);
 		this.HACKS_MAP.put("Criticals", this.hacks.criticals);
 		this.HACKS_MAP.put("KillAura", this.hacks.killAura);
+		this.HACKS_MAP.put("EntityESP", this.hacks.entityESP);
 	}
 
 	private void initializeEventListeners() {
 		// criticals
-		this.eventManager.add(Criticals.class, this.hacks.criticals);
+		this.eventManager.add(LeftClickListener.class, this.hacks.criticals);
 	}
 
 	public Path getPulseFolder() {

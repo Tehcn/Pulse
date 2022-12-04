@@ -2,6 +2,7 @@ package dev.tehcn.pulse.hacks;
 
 import dev.tehcn.pulse.Pulse;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.util.math.Quaternion;
 import net.minecraft.util.math.Vec3d;
 import org.lwjgl.glfw.GLFW;
 
@@ -17,35 +18,26 @@ public class Speed extends Hack {
     @Override
     public void run() {
         ClientPlayerEntity player = Pulse.MC.player;
-        Vec3d vel = player.getVelocity();
+        if(!player.input.pressingForward && !player.input.pressingBack && !player.input.pressingLeft && !player.input.pressingRight) {
+            player.setVelocity(0, player.getVelocity().getY(), 0);
+            return;
+        }
 
         if(player.forwardSpeed > 0 && !player.horizontalCollision) player.setSprinting(true);
 
-        Vec3d oldVel = vel;
 
-        // hopefully this makes it not slippery
-        Vec3d look = player.getRotationVec(1);
-        vel = vel.multiply(vel.dotProduct(look) * 100);
+        Vec3d velocity = player.getVelocity();
+        double speedMultiplier = 1.8;
+        Vec3d newVelocity = velocity.multiply(speedMultiplier, 1, speedMultiplier);
 
-        // don't change the y velocity!
-        vel = new Vec3d(vel.x, oldVel.y, vel.z);
+        // Check if the new velocity vector is greater than 10 blocks per second
+        if (newVelocity.length() > 10) {
+            // Scale the new velocity vector down to 10 blocks per second
+            newVelocity = newVelocity.multiply(0.01 / newVelocity.length());
+        }
 
-        player.setVelocity(vel.x * 1.8, vel.y, vel.z * 1.8);
+        // Update the player's velocity with the new velocity vector
+        player.setVelocity(newVelocity);
 
-        if(!player.input.pressingForward && !player.input.pressingBack && !player.input.pressingLeft && !player.input.pressingRight)
-            player.setVelocity(0, vel.y, 0);
-
-        vel = player.getVelocity();
-
-        double playerSpeed = Math.sqrt(Math.pow(vel.x, 2) + Math.pow(vel.z, 2));
-
-        double maxSpeed = 0.66f;
-
-        if(playerSpeed > maxSpeed)
-            player.setVelocity(
-                    vel.x / playerSpeed * maxSpeed,
-                    vel.y,
-                    vel.z / playerSpeed * maxSpeed
-            );
     }
 }
